@@ -1,13 +1,12 @@
-def calculate_distance(x1, x2):
-    return abs(x1 - x2)
+calculate_distance = lambda x1, x2: abs(x1 - x2)  # noqa E731
 
 
-def calculate_segments(length_a, length_b):
-    return length_a // length_b
+calculate_segments = lambda length_a, length_b: length_a // length_b  # noqa E731
 
 
-def calculate_digit_sum(number):
-    return sum(int(digit) for digit in str(abs(number)))
+calculate_digit_sum = lambda number: sum(  # noqa E731
+    int(digit) for digit in str(abs(number))
+)
 
 
 def calculate_rect_area(x1, y1, x2, y2):
