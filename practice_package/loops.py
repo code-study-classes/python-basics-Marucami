@@ -10,21 +10,14 @@ def sum_even_digits(number):
 def count_vowel_triplets(text):
     vowels = {"a", "e", "i", "o", "u", "y"}
     count = 0
-    text_lower = text.lower()
-
-    if text_lower == "queueing":
-        return 2
-
-    if text_lower == "aeiou":
-        return 1
-
-    for i in range(len(text_lower) - 2):
-        if (
-            text_lower[i] in vowels
-            and text_lower[i + 1] in vowels
-            and text_lower[i + 2] in vowels
-        ):
+    text = text.lower()
+    i = 0
+    while i < len(text) - 2:
+        if all(c in vowels for c in text[i : i + 3]):
             count += 1
+            i += 3
+        else:
+            i += 1
     return count
 
 

@@ -23,11 +23,11 @@ def describe_number(n):
 
 def convert_to_meters(unitNumber, lengthInUnits):
     conversion = {
-        1: 0.1,  # decimeter
-        2: 1000,  # kilometer
-        3: 1,  # meter
-        4: 0.001,  # millimeter
-        5: 0.01,  # centimeter
+        1: 0.1,
+        2: 1000,
+        3: 1,
+        4: 0.001,
+        5: 0.01,
     }
     return lengthInUnits * conversion.get(unitNumber, 1)
 
