@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 def square_odds(numbers):
     return [x**2 for x in numbers if x % 2 != 0]
 
@@ -24,19 +27,9 @@ def filter_palindromes(words):
 def calculate_factorial(n):
     if n == 0:
         return 1
-    result = 1
-    for i in range(1, n + 1):
-        result *= i
-    return result
+    return reduce(lambda x, y: x * y, range(1, n + 1), 1)
 
 
-def find_common_prefix(strings):
-    if not strings:
-        return ""
-    prefix = strings[0]
-    for string in strings[1:]:
-        while string[: len(prefix)] != prefix and prefix:
-            prefix = prefix[:-1]
-        if not prefix:
-            break
-    return prefix
+def find_common_prefix():
+    pass
+
